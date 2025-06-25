@@ -16,7 +16,7 @@ import gymnasium as gym
 from gymnasium import spaces
 import multiprocessing as mp
 from typing import Dict, Any
-import wandb  # 실험 추적용
+import time
 
 class OptimizedDroneEnv(gym.Env):
     """최적화된 드론 환경 - 빠른 학습용"""
@@ -307,10 +307,13 @@ def benchmark_training():
     print(f"🏃 초당 스텝 수: {1000/training_time:.1f} steps/sec")
     
     # 메모리 사용량 체크
-    import psutil
-    process = psutil.Process()
-    memory_mb = process.memory_info().rss / 1024 / 1024
-    print(f"💾 메모리 사용량: {memory_mb:.1f}MB")
+    try:
+        import psutil
+        process = psutil.Process()
+        memory_mb = process.memory_info().rss / 1024 / 1024
+        print(f"💾 메모리 사용량: {memory_mb:.1f}MB")
+    except ImportError:
+        print("💾 메모리 측정: psutil 미설치")
 
 if __name__ == "__main__":
     # 벤치마크 실행
