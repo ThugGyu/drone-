@@ -1,0 +1,265 @@
+{
+  "총 면적": "3km x 2km → 300m x 200m (시뮬레이션)",
+  "주요 구역": {
+    "정문 구역": {
+      "위치": "남쪽",
+      "건물": [
+        "정문",
+        "경비실",
+        "주차장"
+      ],
+      "좌표": "(-100, -150, 0)"
+    },
+    "중앙 광장": {
+      "위치": "중앙",
+      "건물": [
+        "중앙도서관",
+        "학생회관"
+      ],
+      "좌표": "(0, 0, 0)"
+    },
+    "공과대학 구역": {
+      "위치": "동쪽",
+      "건물": [
+        "공과대학",
+        "실험동",
+        "기계공학과"
+      ],
+      "좌표": "(100, 50, 0)"
+    },
+    "기숙사 구역": {
+      "위치": "북쪽",
+      "건물": [
+        "남자기숙사",
+        "여자기숙사",
+        "식당"
+      ],
+      "좌표": "(0, 150, 0)"
+    },
+    "체육시설": {
+      "위치": "서쪽",
+      "건물": [
+        "체육관",
+        "운동장",
+        "수영장"
+      ],
+      "좌표": "(-100, 50, 0)"
+    }
+  },
+  "도로망": {
+    "주도로": "정문 → 중앙광장 → 각 단과대학",
+    "보조도로": "각 건물 간 연결",
+    "보행로": "학생 이동 경로"
+  },
+  "자연환경": {
+    "나무": "캠퍼스 전체 녹지",
+    "연못": "중앙도서관 앞",
+    "언덕": "북쪽 기숙사 뒤편"
+  },
+  "campus_info": {
+    "name": "경상국립대학교 가좌캠퍼스",
+    "scale": "1:10 축척 (실제 2km x 1.5km → 200m x 150m)",
+    "coordinate_system": "상대좌표 (미터 단위)"
+  },
+  "buildings": [
+    {
+      "name": "정문",
+      "korean_name": "정문",
+      "position": [20, 75],
+      "size": [15, 10],
+      "color": "brown",
+      "type": "entrance",
+      "description": "메인 출입구"
+    },
+    {
+      "name": "공과대학",
+      "korean_name": "공과대학",
+      "position": [60, 100],
+      "size": [35, 25],
+      "color": "red",
+      "type": "academic",
+      "description": "공학관, 기계공학과 등"
+    },
+    {
+      "name": "중앙도서관",
+      "korean_name": "중앙도서관",
+      "position": [120, 90],
+      "size": [30, 20],
+      "color": "blue",
+      "type": "library",
+      "description": "중앙도서관 및 정보센터"
+    },
+    {
+      "name": "학생회관",
+      "korean_name": "학생회관",
+      "position": [80, 60],
+      "size": [25, 15],
+      "color": "green",
+      "type": "student_center",
+      "description": "학생회관, 식당, 편의시설"
+    },
+    {
+      "name": "행정본부",
+      "korean_name": "행정본부",
+      "position": [100, 120],
+      "size": [20, 15],
+      "color": "gray",
+      "type": "administration",
+      "description": "본부건물, 행정사무실"
+    },
+    {
+      "name": "체육관",
+      "korean_name": "체육관",
+      "position": [150, 50],
+      "size": [25, 20],
+      "color": "purple",
+      "type": "sports",
+      "description": "실내체육관, 운동시설"
+    },
+    {
+      "name": "기숙사",
+      "korean_name": "기숙사",
+      "position": [40, 30],
+      "size": [30, 20],
+      "color": "orange",
+      "type": "dormitory",
+      "description": "학생기숙사"
+    },
+    {
+      "name": "자연과학대학",
+      "korean_name": "자연과학대학",
+      "position": [140, 110],
+      "size": [25, 20],
+      "color": "cyan",
+      "type": "academic",
+      "description": "이과대학, 연구실"
+    },
+    {
+      "name": "인문사회대학",
+      "korean_name": "인문사회대학",
+      "position": [60, 130],
+      "size": [30, 20],
+      "color": "yellow",
+      "type": "academic",
+      "description": "인문대, 사회과학대"
+    },
+    {
+      "name": "의과대학",
+      "korean_name": "의과대학",
+      "position": [170, 80],
+      "size": [25, 25],
+      "color": "pink",
+      "type": "medical",
+      "description": "의과대학, 병원"
+    }
+  ],
+  "waypoints": [
+    {
+      "id": 0,
+      "name": "정문",
+      "korean_name": "정문",
+      "position": [27, 80],
+      "type": "start_end",
+      "description": "출발점 및 복귀점"
+    },
+    {
+      "id": 1,
+      "name": "Central Plaza",
+      "korean_name": "중앙광장",
+      "position": [90, 85],
+      "type": "landmark",
+      "description": "캠퍼스 중심 광장"
+    },
+    {
+      "id": 2,
+      "name": "Engineering",
+      "korean_name": "공과대학",
+      "position": [77, 112],
+      "type": "academic",
+      "description": "공과대학 건물 앞"
+    },
+    {
+      "id": 3,
+      "name": "Library",
+      "korean_name": "중앙도서관",
+      "position": [135, 100],
+      "type": "library",
+      "description": "중앙도서관 정문"
+    },
+    {
+      "id": 4,
+      "name": "Science Building",
+      "korean_name": "자연과학대학",
+      "position": [152, 120],
+      "type": "academic",
+      "description": "자연과학대학 입구"
+    },
+    {
+      "id": 5,
+      "name": "Medical School",
+      "korean_name": "의과대학",
+      "position": [182, 92],
+      "type": "medical",
+      "description": "의과대학 진입로"
+    },
+    {
+      "id": 6,
+      "name": "Sports Complex",
+      "korean_name": "체육관",
+      "position": [162, 60],
+      "type": "sports",
+      "description": "체육관 광장"
+    },
+    {
+      "id": 7,
+      "name": "Student Center",
+      "korean_name": "학생회관",
+      "position": [92, 67],
+      "type": "student_facility",
+      "description": "학생회관 앞 광장"
+    },
+    {
+      "id": 8,
+      "name": "Dormitory",
+      "korean_name": "기숙사",
+      "position": [55, 40],
+      "type": "residential",
+      "description": "기숙사 출입구"
+    },
+    {
+      "id": 9,
+      "name": "Main Gate Return",
+      "korean_name": "정문복귀",
+      "position": [27, 80],
+      "type": "start_end",
+      "description": "정문으로 복귀"
+    }
+  ],
+  "flight_path": {
+    "total_waypoints": 10,
+    "estimated_distance": "약 800m (실제 8km 상당)",
+    "difficulty": "중급",
+    "special_notes": [
+      "실제 경상국립대 가좌캠퍼스 레이아웃 기반",
+      "주요 건물들을 순회하는 실용적인 경로",
+      "캠퍼스 투어 코스로도 활용 가능"
+    ]
+  },
+  "obstacles": [
+    {
+      "type": "trees",
+      "description": "캠퍼스 내 나무들과 조경시설",
+      "simulated_as": "LiDAR 감지 장애물"
+    },
+    {
+      "type": "buildings",
+      "description": "각 건물들의 높이 장애물",
+      "height_limit": "드론 최소 고도 15m 이상"
+    }
+  ],
+  "weather_conditions": {
+    "default": "맑음",
+    "wind_speed": "5-10 km/h",
+    "visibility": "양호"
+  }
+}
