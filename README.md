@@ -1,222 +1,132 @@
-# 🚁 드론 자율주행 강화학습 프로젝트
+# 🚁 DRONE Control System
 
-경상국립대 캠퍼스 환경에서 PPO 알고리즘을 활용한 드론 자율주행 시뮬레이션
+PPO Reinforcement Learning + ROS2 + Gazebo Drone Control System
 
-## 📋 프로젝트 개요
+## ✨ Core Features
+- **GUI-based teleoperation** with English interface
+- **Real-time 2D map visualization** and mission planning
+- **Multiple control methods**: Mouse, keyboard, and button controls
+- **Safety features**: Boundary protection and emergency landing
+- **PPO reinforcement learning** integration for autonomous flight
 
-이 프로젝트는 자체 개발한 시뮬레이션 환경에서 PPO(Proximal Policy Optimization) 강화학습을 통해 드론의 자율주행 능력을 개발합니다.
+## 🎮 System Control Files
 
-### 🎯 주요 특징
-- ⚡ **초고속 훈련**: 430+ FPS로 GPU 가속 훈련
-- 🏫 **경상국립대 캠퍼스 환경**: 1/10 스케일 캠퍼스 맵 구현
-- 🎮 **8개 경유점 미션**: 정문 → 중앙광장 → 공과대학 → 기숙사 순회
-- 🧠 **PPO 강화학습**: Stable Baselines3 기반 최적화
+### Essential Control Sequence:
+1. **`1_start_system.bat`** - System startup (Gazebo + ROS2)
+2. **`2_takeoff.bat`** - Drone takeoff to safe altitude
+3. **`6_gui_teleop_en.bat`** - GUI control interface (English, recommended)
+4. **`4_landing.bat`** - Safe landing and system shutdown
 
-### 🔧 기술 스택
-- **언어**: Python 3.13
-- **강화학습**: PPO (Stable Baselines3)
-- **딥러닝**: PyTorch 2.7.1+cu118
-- **시각화**: OpenCV, Matplotlib
-- **환경**: Gymnasium 1.1.1
+### Additional Controls:
+- `0_check_gui_requirements.bat` - GUI requirements checker
+- `3_keyboard_control.bat` - Menu-based keyboard control
 
-## 🚀 설치 및 설정
+## 🐍 Core Scripts
 
-### 1. 시스템 요구사항
-- Python 3.8+ (3.13 권장)
-- CUDA 지원 GPU (GTX 1050Ti 이상)
-- 16GB RAM 이상
-- Windows 10/11
+| File | Size | Description |
+|------|------|-------------|
+| `gui_teleop_control_en.py` | 36KB | GUI teleoperation control with map visualization |
+| `advanced_teleop_control.py` | 21KB | Advanced real-time teleoperation |
+| `check_gui_requirements.py` | - | GUI requirements validation |
 
-### 2. 의존성 설치
+## 📋 Project Configuration
+
+- **`package.xml`** - ROS2 package configuration
+- **`CMakeLists.txt`** - Build system configuration
+
+## 📖 Documentation
+
+- **`README_Usage_Guide.txt`** - Complete usage guide (Korean)
+- **`GUI_Manual_EN.txt`** - GUI user manual (English)
+- **`CORE_FILES_SUMMARY.txt`** - Project structure summary
+
+## 📁 Configuration Folders
+
+| Folder | Description |
+|--------|-------------|
+| `config/` | Configuration files (RVIZ visualization) |
+| `launch/` | ROS2 launch files for system startup |
+| `maps/` | Simulation environment maps |
+| `models/` | Trained PPO models and 3D meshes |
+| `install/` | ROS2 installation and build files |
+
+## 🕹️ Control Methods
+
+### 🖥️ GUI Control (Recommended)
+- **Mouse**: Click on map to set target position
+- **Keyboard**: WASD movement, QE rotation, RF altitude
+- **Buttons**: Takeoff, Landing, Emergency controls
+- **Features**: Real-time map, mission planning, safety monitoring
+
+### ⌨️ Keyboard Control
+- **Menu-based**: Number selection for movements
+- **Real-time**: Direct keyboard input for immediate control
+
+### 🎯 Mission Modes
+- **Square Mission**: Automated square pattern flight
+- **Circle Mission**: Automated circular pattern flight
+- **Return Home**: Automatic return to starting position
+
+## ⚙️ System Requirements
+
+- **OS**: Windows 10/11
+- **Software**: WSL2, ROS2 Humble, Gazebo Garden
+- **Hardware**: NVIDIA GPU (recommended)
+- **Python**: 3.8+ with tkinter, numpy, matplotlib
+
+## 🚀 Quick Start
+
 ```bash
-pip install -r requirements.txt
+# 1. Start the system
+1_start_system.bat
+
+# 2. Wait 30-60 seconds for initialization
+
+# 3. Takeoff the drone
+2_takeoff.bat
+
+# 4. Launch GUI control
+6_gui_teleop_en.bat
+
+# 5. Fly and enjoy! 🎮
+
+# 6. Land safely when done
+4_landing.bat
 ```
 
-### 3. 시스템 진단
-```bash
-python check_airsim_setup.py
-```
+## 🛡️ Safety Features
 
-## 📁 프로젝트 구조
+- **Boundary Protection**: 20m distance limit from origin
+- **Altitude Limits**: 0.5m minimum, 8m maximum
+- **Emergency Landing**: Immediate safety landing
+- **Real-time Monitoring**: Position, altitude, and status tracking
 
-```
-DRONE/
-├── 🎯 핵심 훈련 스크립트
-│   ├── improved_campus_training.py     # 최종 개선된 훈련 시스템 (메인)
-│   ├── gpu_training.py                 # GPU 가속 훈련
-│   └── simple_drone_sim.py            # 기본 드론 시뮬레이션 환경
-│
-├── 🧪 테스트 및 분석 도구
-│   ├── test_trained_drone.py          # 모델 테스트 및 궤적 시각화
-│   ├── check_airsim_setup.py          # 시스템 진단 도구
-│   └── campus_map_creator.py          # 캠퍼스 맵 생성기
-│
-├── 📁 설정 및 문서
-│   ├── requirements.txt               # 패키지 의존성
-│   ├── campus_blueprint.json          # 캠퍼스 설계 사양
-│   ├── project_summary.md             # 프로젝트 요약
-│   └── README.md                      # 이 파일
-│
-└── 📦 models/                         # 훈련된 모델들
-    ├── improved_drone_final.zip       # 🏆 최종 개선 모델 (추천)
-    ├── ppo_gpu_drone_final.zip        # GPU 훈련 최종 모델
-    ├── ppo_campus_drone_final.zip     # CPU 훈련 최종 모델
-    └── [최신 체크포인트들...]
-```
+## 🔧 Troubleshooting
 
-## 🎮 사용법
+| Issue | Solution |
+|-------|----------|
+| System won't start | Run `0_check_gui_requirements.bat` |
+| GUI doesn't respond | Check X11 display and ROS2 connection |
+| Control commands ignored | Verify "Enable Control" is active |
+| Mission won't start | Check safety limits and starting position |
 
-### 1단계: 시스템 확인
-```bash
-python check_airsim_setup.py
-```
-✅ GPU 활성화, 패키지 설치, CUDA 지원 확인
+## 📞 Support
 
-### 2단계: 드론 훈련 실행
-```bash
-# 최고 성능 훈련 (권장)
-python improved_campus_training.py
+For technical issues:
+1. Check log files in system terminals
+2. Review error messages
+3. Consult `README_Usage_Guide.txt`
+4. Verify system requirements
 
-# 기본 GPU 훈련
-python gpu_training.py
-```
+## ⚠️ Important Notes
 
-### 3단계: 훈련된 모델 테스트
-```bash
-python test_trained_drone.py
-```
-📊 궤적 시각화, 성능 분석, 경유점 달성률 확인
-
-### 4단계: 캠퍼스 맵 확인
-```bash
-python campus_map_creator.py
-```
-🗺️ 경상국립대 캠퍼스 환경 및 경유점 시각화
-
-## 📊 성능 결과
-
-### 🏆 최종 훈련 성과 (improved_drone_final.zip)
-- **훈련 시간**: 2.0분 (50,000 스텝)
-- **훈련 속도**: 432 FPS
-- **경유점 달성**: 8개 중 다수 성공적 도달
-- **보상 개선**: 지속적인 +500 경유점 보너스 달성
-
-### 📈 훈련 단계별 비교
-| 모델 | 훈련 스텝 | 시간 | FPS | GPU 활용 | 최종 보상 |
-|------|-----------|------|-----|----------|-----------|
-| CPU 기본 | 10,000 | 0.2분 | 200 | 0% | 191 |
-| GPU 가속 | 20,000 | 0.8분 | 421 | 85% | -30.6 |
-| **개선 최종** | **50,000** | **2.0분** | **432** | **87%** | **+450** |
-
-## 🏗️ 환경 설정
-
-### 드론 관찰 공간 (20차원)
-- **위치**: X, Y, Z 좌표
-- **속도**: VX, VY, VZ 벡터  
-- **LiDAR**: 8방향 거리 센서
-- **목표**: 다음 경유점까지의 거리와 방향
-
-### 드론 행동 공간 (4차원)
-- **이동**: [전진/후진, 좌/우, 상/하, 회전]
-- **범위**: [-1, 1] 연속값
-- **제어**: 속도 기반 제어
-
-### 보상 함수
-```python
-# 경유점 도달: +500 (대폭 증가)
-# 목표 접근: +거리_개선 * 10
-# 경계 위반: -100 (경계 페널티 강화)
-# 충돌: -50
-# 갇힘 방지: -20 (연속 정체 감지)
-```
-
-## 🗺️ 캠퍼스 환경 설계
-
-### 경상국립대 캠퍼스 (1/10 스케일)
-- **크기**: 300m × 200m (실제 3km × 2km)
-- **건물들**: 공과대학, 도서관, 기숙사, 학생회관, 체육관, 정문
-
-### 8개 경유점 미션
-1. **정문** (50, 100) - 시작점
-2. **게이트** (100, 100) - 입구 통과
-3. **공과대학** (120, 150) - 첫 번째 목표
-4. **중앙광장** (150, 120) - 캠퍼스 중심
-5. **도서관** (200, 120) - 학습 공간
-6. **광장** (180, 80) - 휴식 공간
-7. **체육시설** (120, 60) - 운동 시설
-8. **기숙사** (80, 50) - 생활 공간
-9. **복귀** (50, 100) - 정문 돌아가기
-
-## 🎯 주요 개선 사항
-
-### 개선된 훈련 시스템 특징
-1. **강화된 경계 페널티**: 맵 경계 근접 시 큰 페널티
-2. **8개 세분화된 경유점**: 더 정교한 경로 학습
-3. **갇힘 감지 시스템**: 최근 20스텝 위치 추적
-4. **최적화된 보상**: 경유점 +500, 거리 비례 보상
-5. **GPU 가속**: GTX 1050Ti에서 430+ FPS 달성
-
-## 🔧 하이퍼파라미터
-
-### PPO 설정 (improved_campus_training.py)
-```python
-learning_rate = 5e-4      # 기본값보다 높음
-n_steps = 2048           # 배치 크기 증가  
-batch_size = 256         # 큰 배치로 안정성 향상
-n_epochs = 10            # 충분한 학습 반복
-gamma = 0.99             # 미래 보상 할인율
-```
-
-## 📈 성능 모니터링
-
-### 실시간 훈련 로그 확인
-```bash
-# 훈련 중 출력되는 로그
-Step 5000: ep_rew_mean = +245.3, waypoints_reached = 4
-Step 10000: ep_rew_mean = +356.7, waypoints_reached = 6  
-Step 50000: ep_rew_mean = +450.2, waypoints_reached = 8 ✅
-```
-
-### 테스트 결과 시각화
-- 🛣️ **드론 궤적**: 실시간 경로 추적
-- 📊 **경유점 달성률**: 단계별 성공률
-- ⚡ **성능 지표**: FPS, GPU 사용률, 훈련 시간
-
-## 🐛 문제 해결
-
-### GPU 관련 문제
-```bash
-# CUDA 확인
-python -c "import torch; print(f'CUDA: {torch.cuda.is_available()}')"
-
-# GPU 메모리 부족 시
-# batch_size를 256 → 128로 감소
-```
-
-### 훈련 성능 최적화
-```python
-# 더 빠른 훈련을 위한 설정 조정
-n_steps = 1024          # 스텝 수 감소
-batch_size = 128        # 배치 크기 감소  
-```
-
-## 📝 사용 팁
-
-1. **첫 실행 시**: `check_airsim_setup.py`로 환경 확인
-2. **빠른 테스트**: `gpu_training.py`로 20,000 스텝 훈련
-3. **최고 성능**: `improved_campus_training.py`로 50,000 스텝 훈련
-4. **결과 분석**: `test_trained_drone.py`로 궤적 시각화
-
-## 🏆 달성 결과
-
-✅ **완전한 자율주행 시스템 구축**  
-✅ **GPU 가속으로 초고속 훈련** (430+ FPS)  
-✅ **경상국립대 캠퍼스 환경 구현**  
-✅ **8개 경유점 성공적 달성**  
-✅ **실용적 훈련 시간** (2분 내)  
-✅ **시각화 및 분석 도구 완비**  
+- **Always test in simulation before real flight**
+- **Follow local aviation regulations**
+- **Maintain visual line of sight**
+- **Keep emergency procedures ready**
 
 ---
-📍 **경상국립대학교 드론 자율주행 프로젝트**  
-⚡ **GPU 가속 강화학습으로 2분 만에 완성되는 드론 AI**  
-🎯 **8개 캠퍼스 경유점을 자율 순회하는 스마트 드론** 
+
+**Version**: 1.0 | **Language**: English | **Updated**: 2024
+
+🎯 **Project Status**: Core files optimized and ready for deployment 

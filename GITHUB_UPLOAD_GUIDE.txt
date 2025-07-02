@@ -1,0 +1,128 @@
+🚁 DRONE 시스템 GitHub 업로드 가이드
+======================================
+
+GitHub MCP가 연결되어 있어 직접 업로드할 수 있습니다!
+
+📋 업로드할 핵심 파일들:
+======================
+
+🎮 시스템 제어 파일:
+  ✅ 0_check_gui_requirements.bat
+  ✅ 1_start_system.bat
+  ✅ 2_takeoff.bat  
+  ✅ 3_keyboard_control.bat
+  ✅ 4_landing.bat
+  ✅ 6_gui_teleop_en.bat
+
+🐍 Python 스크립트:
+  ✅ gui_teleop_control_en.py (36KB)
+  ✅ advanced_teleop_control.py (21KB)
+  ✅ check_gui_requirements.py
+
+📋 설정 파일:
+  ✅ package.xml
+  ✅ CMakeLists.txt
+  ✅ README.md (새로 생성됨)
+
+📖 문서:
+  ✅ README_Usage_Guide.txt
+  ✅ GUI_Manual_EN.txt
+  ✅ CORE_FILES_SUMMARY.txt
+
+📁 폴더들:
+  ✅ config/
+  ✅ launch/
+  ✅ maps/
+  ✅ models/
+  ✅ install/
+
+🚀 업로드 방법 1: 수동 업로드 (쉬움)
+===================================
+
+1. GitHub.com 접속
+   👉 https://github.com/ThugGyu/AUTO
+
+2. "Add file" → "Upload files" 클릭
+
+3. 위의 핵심 파일들을 드래그 앤 드롭
+
+4. 커밋 메시지 입력:
+   "Upload DRONE Control System - Complete Project"
+
+5. "Commit changes" 클릭
+
+🚀 업로드 방법 2: Git 명령어 (고급)
+==================================
+
+PowerShell 또는 명령 프롬프트에서:
+
+```
+cd "C:\Users\kym70\OneDrive\바탕 화면\coding\DRONE"
+
+git init
+git remote add origin https://github.com/ThugGyu/AUTO.git
+
+git add README.md
+git add README_Usage_Guide.txt
+git add GUI_Manual_EN.txt
+git add package.xml
+git add CMakeLists.txt
+git add CORE_FILES_SUMMARY.txt
+git add *.bat
+git add *.py
+git add config/
+git add launch/
+git add maps/
+git add models/
+git add install/
+
+git commit -m "Upload DRONE Control System - Complete Project
+
+🚁 ROS2 + Gazebo + PPO Reinforcement Learning Drone Control System
+
+✨ 핵심 기능:
+- GUI 기반 드론 텔레오퍼레이션
+- 실시간 2D 지도 시각화 및 미션 계획
+- 안전 기능 및 경계 보호
+- PPO 강화학습 통합
+
+🎮 시스템 제어 파일들과 Python 스크립트들 포함
+📖 완전한 문서화 및 사용 가이드 제공
+🚀 핵심 기능만으로 최적화된 프로젝트"
+
+git branch -M main
+git push -u origin main
+```
+
+🚀 업로드 방법 3: GitHub MCP 직접 업로드 (자동)
+=============================================
+
+AI 어시스턴트가 GitHub MCP를 통해 직접 업로드:
+
+✅ GitHub MCP 연결 확인됨
+✅ ThugGyu/AUTO 저장소 접근 가능
+✅ 파일 업로드 준비 완료
+
+"ㄱㄱ" 입력하시면 자동으로 업로드합니다!
+
+📊 현재 상태:
+=============
+
+✅ 프로젝트 정리 완료
+✅ 핵심 파일만 선별
+✅ 파일명 영어 통일
+✅ 문서화 완료
+✅ README.md 생성
+✅ GitHub MCP 연결 확인
+✅ 업로드 준비 완료
+
+🎯 다음 단계:
+=============
+
+1. 사용자 승인 대기 중...
+2. GitHub MCP로 자동 업로드 실행
+3. 저장소 URL 확인 및 공유
+
+⭐ 저장소 주소: https://github.com/ThugGyu/AUTO
+
+준비 완료! 업로드를 시작하시겠습니까? 
