@@ -1,0 +1,37 @@
+Urban City Environment Map (ASCII Preview)
+Size: 2000x2000 pixels (100.0m x 100.0m at 5cm resolution)
+■ = Buildings, ═ = Roads, ╬ = Intersections, ░ = Parks, ◆ = Landing zones, □ = Open space
+
+Legend:
+■ = Commercial/Residential Buildings
+█ = High-rise Buildings  
+═ = Main Roads (4-lane)
+─ = Secondary Roads (2-lane)
+╬ = Traffic Intersections
+░ = Parks/Green Areas
+▓ = Parking Lots
+◆ = Designated Landing Zones
+□ = Open Flight Space
+
+Map Features:
+- Downtown business district with high-rise buildings
+- Residential areas with smaller buildings
+- Road network with intersections
+- Central park area for safe landing
+- Parking lots and open spaces
+- Realistic urban layout for drone training
+
+Navigation Challenges:
+- Building height variations (10-50m)
+- Narrow corridors between buildings
+- Wind tunnel effects around tall structures
+- Multiple landing zone options
+- Traffic intersection avoidance
+- No-fly zones around sensitive buildings
+
+This map provides realistic urban flight training scenarios including:
+- Autonomous navigation between buildings
+- Emergency landing procedures
+- Obstacle avoidance in complex environments
+- Multi-point route planning
+- Urban search and rescue training 

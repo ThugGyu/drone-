@@ -1,0 +1,99 @@
+Urban City Environment Map (Improved Layout)
+Size: 2000x2000 pixels (100.0m x 100.0m at 5cm resolution)
+
+Legend:
+■ = High-rise Buildings (Downtown)    █ = Residential Buildings
+═ = Main Roads (4-lane)              ─ = Secondary Roads (2-lane)  
+╬ = Major Intersections              + = Minor Intersections
+░ = Parks/Green Areas                ▓ = Parking Lots
+◆ = Emergency Landing Zones         ○ = Hospital Landing Pad
+□ = Open Flight Space               | = Building Walls
+
+Realistic Urban Layout (ASCII Representation):
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+█□□│═══════════╬═══════════╬═══════════╬═══════════│□□█
+█□□│           ║           ║           ║           │□□█
+█□░│  ██    ██ ║  ░░░░░░   ║  ██    ██ ║  ░░░░░░   │░□█
+█□░│  ██    ██ ║  ░PARK░   ║  ██    ██ ║  ░PARK░   │░□█
+█◆░│           ║  ░░░░░░   ║           ║  ░░░░░░   │░◆█
+█══╬═══════════╬═══════════╬═══════════╬═══════════╬══█
+█  ║  ▓▓▓▓▓▓  ║           ║  ■■■■■■  ║           ║  █
+█  ║  ▓PARK▓  ║    ■■■    ║  ■■■■■■  ║    ■■■    ║  █
+█  ║  ▓▓▓▓▓▓  ║    ■■■    ║  ■■■■■■  ║    ■■■    ║  █
+█  ║           ║    ■■■    ║           ║    ■■■    ║  █
+█══╬═══════════╬═══════════╬═══════════╬═══════════╬══█
+█  ║           ║  ■■■■■■  ║     ○     ║  ■■■■■■  ║  █
+█  ║    ██     ║  ■■■■■■  ║  HOSPITAL ║  ■■■■■■  ║  █
+█  ║    ██     ║  ■■■■■■  ║  LANDING  ║  ■■■■■■  ║  █
+█  ║           ║           ║     PAD   ║           ║  █
+█══╬═══════════╬═══════════╬═══════════╬═══════════╬══█
+█  ║  ▓▓▓▓▓▓  ║    ■■■    ║  ■■■■■■  ║    ■■■    ║  █
+█  ║  ▓PARK▓  ║    ■■■    ║  ■■■■■■  ║    ■■■    ║  █
+█  ║  ▓▓▓▓▓▓  ║    ■■■    ║  ■■■■■■  ║    ■■■    ║  █
+█◆░│           ║           ║           ║           │░◆█
+█░░│  ██    ██ ║  ░░░░░░   ║  ██    ██ ║  ░░░░░░   │░░█
+█░░│  ██    ██ ║  ░PARK░   ║  ██    ██ ║  ░PARK░   │░░█
+█□□│           ║  ░░░░░░   ║           ║  ░░░░░░   │□□█
+█□□│═══════════╬═══════════╬═══════════╬═══════════│□□█
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+Key Features:
+
+🏢 DOWNTOWN DISTRICT (Center):
+- High-rise office buildings (■)
+- Dense urban environment
+- Multiple flight corridors
+- Commercial zones
+
+🏠 RESIDENTIAL AREAS (Corners):
+- Lower residential buildings (█)
+- Suburban layout
+- Open spaces for training
+
+🛣️ ROAD NETWORK:
+- Main arterial roads (═) - 4 lanes
+- Secondary roads (│) - 2 lanes  
+- Major intersections (╬)
+- Traffic management zones
+
+🌳 PARKS & GREEN SPACES:
+- Central park area (░)
+- Emergency landing zones
+- Safe flight corridors
+- Tree obstacles for navigation training
+
+🚁 LANDING ZONES:
+- Hospital helipad (○) - Primary medical
+- Emergency pads (◆) - Corners
+- Police station landing
+- Safe approach/departure routes
+
+🅿️ PARKING AREAS (▓):
+- Vehicle obstacles
+- Varying density
+- Navigation challenges
+
+Navigation Training Scenarios:
+✓ Urban canyon navigation
+✓ Precision landing practice  
+✓ Obstacle avoidance training
+✓ Emergency response routes
+✓ Multi-waypoint missions
+✓ Search and rescue operations
+✓ Traffic pattern compliance
+✓ Weather corridor planning
+
+Flight Zones:
+- Safe: Parks, open areas, designated corridors
+- Restricted: Dense building areas, intersections  
+- Emergency: Hospital vicinity, landing pads
+- Training: Varied difficulty levels available
+
+Map Advantages:
+• Realistic urban environment simulation
+• Multiple difficulty levels in same map
+• Emergency scenario training capability
+• Scalable complexity for different skill levels
+• Real-world navigation challenges
+• Safe training environment with escape routes

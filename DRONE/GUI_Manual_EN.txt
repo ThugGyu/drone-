@@ -1,0 +1,237 @@
+🚁 DRONE GUI TELEOPERATION SYSTEM - USER MANUAL (ENGLISH VERSION)
+===============================================================================
+
+📋 OVERVIEW
+-----------
+This is a comprehensive GUI-based drone control system that provides:
+- Intuitive graphical interface for drone control
+- Real-time 2D map visualization
+- Mission planning and execution
+- Safety features and monitoring
+- Multiple control methods (mouse, keyboard, buttons)
+
+🎯 QUICK START
+--------------
+1. Run: start_gui_system_en.bat (Complete system startup)
+   OR
+   Run: 6_gui_teleop_en.bat (GUI only, requires system already running)
+
+2. The GUI window will open with:
+   - Control panel on the left
+   - Real-time map on the right
+   - Status information at the bottom
+
+🎮 CONTROL METHODS
+------------------
+
+🖱️ MOUSE CONTROLS:
+- Click anywhere on the map → Set target position
+- Red dot shows current drone position
+- Blue dot shows target position
+- Green line shows planned path
+
+⌨️ KEYBOARD CONTROLS:
+- W/A/S/D: Move Forward/Left/Backward/Right
+- R/F: Move Up/Down
+- Q/E: Turn Left/Right
+- Space: Takeoff
+- X: Land
+- H: Return to Home position
+- C: Toggle PPO control On/Off
+- ESC: Emergency landing
+
+🔘 BUTTON CONTROLS:
+- Takeoff/Land: Basic flight operations
+- Direction buttons: Manual directional movement
+- Speed control: Adjust movement speed
+- Mission buttons: Execute automated patterns
+
+📊 GUI INTERFACE LAYOUT
+-----------------------
+
+LEFT PANEL - CONTROL CENTER:
+┌─────────────────────────┐
+│ 🚁 FLIGHT CONTROLS      │
+│ [Takeoff] [Land] [Home] │
+│                         │
+│ 🎯 DIRECTION CONTROLS   │
+│ [↑] [↓] [←] [→]        │
+│ [⬆] [⬇] (Up/Down)      │
+│                         │
+│ ⚙️ SETTINGS             │
+│ Speed: [Slider]         │
+│ Height: [Slider]        │
+│                         │
+│ 🎪 MISSION MODES        │
+│ [Square] [Circle]       │
+│ [Custom] [Stop]         │
+│                         │
+│ 🛡️ SAFETY               │
+│ [Emergency] [Reset]     │
+│ PPO: [ON/OFF]          │
+└─────────────────────────┘
+
+RIGHT PANEL - MAP DISPLAY:
+┌─────────────────────────┐
+│ 🗺️ REAL-TIME MAP       │
+│                         │
+│ 🔴 ← Drone position     │
+│ 🔵 ← Target position    │
+│ 🟢 ── Planned path      │
+│                         │
+│ Arena: 50m x 50m        │
+│ Grid: 5m intervals      │
+│                         │
+│ Click to set target!    │
+└─────────────────────────┘
+
+BOTTOM PANEL - STATUS INFO:
+┌─────────────────────────┐
+│ Position: X=0.0 Y=0.0   │
+│ Target: X=0.0 Y=0.0     │
+│ Distance: 0.0m          │
+│ Speed: 0.0m/s           │
+│ Status: Connected       │
+└─────────────────────────┘
+
+🎯 MISSION MODES
+----------------
+
+🔲 SQUARE PATTERN:
+- Flies in a 10m x 10m square
+- Automatic waypoint navigation
+- Returns to start position
+
+🔵 CIRCLE PATTERN:
+- Flies in a circular path
+- 5m radius from current position
+- Smooth curved movement
+
+🎨 CUSTOM PATTERN:
+- Click multiple points on map
+- Creates custom flight path
+- Executes in sequence
+
+⏹️ STOP MISSION:
+- Immediately stops current mission
+- Returns control to manual mode
+- Hovers at current position
+
+🛡️ SAFETY FEATURES
+-------------------
+
+🚨 BOUNDARY PROTECTION:
+- Arena limits: -25m to +25m (X and Y)
+- Automatic boundary checking
+- Prevents out-of-bounds movement
+
+🏔️ ALTITUDE LIMITS:
+- Minimum height: 0.5m
+- Maximum height: 10.0m
+- Ground collision prevention
+
+🆘 EMERGENCY FUNCTIONS:
+- ESC key: Emergency landing
+- Emergency button: Immediate stop
+- Auto-return if signal lost
+
+🔒 PPO SAFETY:
+- AI-assisted obstacle avoidance
+- Intelligent path planning
+- Can be toggled on/off
+
+📈 REAL-TIME MONITORING
+-----------------------
+
+📍 POSITION TRACKING:
+- Current drone coordinates (X, Y, Z)
+- Real-time position updates
+- Distance to target calculation
+
+📊 STATUS INFORMATION:
+- Connection status with drone
+- Current flight mode
+- Battery level (if available)
+- Signal strength
+
+🎛️ CONTROL STATUS:
+- Active control method
+- PPO enable/disable state
+- Current mission progress
+- Speed and direction indicators
+
+⚙️ TECHNICAL SPECIFICATIONS
+----------------------------
+
+🔧 SYSTEM REQUIREMENTS:
+- Windows 10/11 with WSL2
+- ROS2 Humble
+- Python 3.8+ with tkinter
+- X11 display server (WSLg)
+
+📡 ROS2 TOPICS:
+- /ppo_target: Target position commands
+- /ppo_enable: PPO control toggle
+- /cmd_vel: Velocity commands
+- /drone_position: Position feedback
+
+🎨 DISPLAY SPECS:
+- Map size: 50m x 50m arena
+- Grid resolution: 5m
+- Update rate: 20 Hz
+- Color coding: Red=Drone, Blue=Target, Green=Path
+
+🛠️ TROUBLESHOOTING
+-------------------
+
+❌ GUI WON'T START:
+- Check X11 display: run setup_x11.bat
+- Verify WSL2 is running
+- Install required Python packages
+
+❌ NO DRONE CONNECTION:
+- Start main system first: 1_start_system.bat
+- Check ROS2 environment
+- Verify topic connections
+
+❌ ENCODING ISSUES:
+- Use English version files (*_en.bat)
+- Set UTF-8 encoding: chcp 65001
+- Check locale settings in WSL
+
+❌ PATH PROBLEMS:
+- Use setup_path_fix.bat for diagnosis
+- Move DRONE folder to English path
+- Use absolute path references
+
+🔧 COMMAND LINE FIXES:
+# Check ROS2 topics
+ros2 topic list
+
+# Test GUI requirements
+python3 -c "import tkinter; print('Tkinter OK')"
+
+# Check WSL display
+echo $DISPLAY
+
+# Set UTF-8 in WSL
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+📞 SUPPORT
+----------
+
+For additional help:
+1. Check system logs in terminal
+2. Verify all prerequisites are installed
+3. Run diagnostic scripts:
+   - setup_path_fix.bat
+   - 0_check_gui_requirements.bat
+   - setup_x11.bat
+
+🎉 ENJOY FLYING!
+================
+The GUI system provides an intuitive and safe way to control your drone.
+Practice with simple movements first, then try mission modes for advanced operations.
+
+Happy flying! 🚁✨ 

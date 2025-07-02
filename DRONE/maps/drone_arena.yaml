@@ -1,0 +1,21 @@
+image: urban_city_improved.pgm
+mode: trinary
+resolution: 0.05
+origin: [-50.0, -50.0, 0.0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.25
+
+# Urban City Environment Map - Improved Version
+# 100m x 100m realistic city environment
+# Features: Buildings, roads, intersections, parks, landing zones
+# Optimized for autonomous drone navigation and training
+# Resolution: 5cm per pixel for precise navigation
+
+# Map Layout:
+# - Downtown business district (center)
+# - Residential areas (corners)
+# - Road network with intersections
+# - Parks and green spaces
+# - Emergency landing zones
+# - Parking areas with obstacles 
